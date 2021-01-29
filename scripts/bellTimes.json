@@ -2,7 +2,7 @@
 "timetableData": {
 
 "mondayA":{
-	"Roll Call":{
+	"Period RC":{
         "name": "Roll Call",
 		"subject": "",
 		"room": "",
@@ -88,7 +88,7 @@
 },
 
 "tuesdayA":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",
@@ -167,7 +167,7 @@
 },
 
 "wednesdayA":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",
@@ -248,9 +248,9 @@
 },
 
 "thursdayA":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
-		"room": "",
+		"room": "Roll Call",
 		"teacher": "",
 		"startTime": "08:45",
 		"periodLength": "7"
@@ -327,7 +327,7 @@
 },
 
 "fridayA":{ 
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",
@@ -407,7 +407,7 @@
 },
 
 "mondayB":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",
@@ -487,7 +487,7 @@
 },
 
 "tuesdayB":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",
@@ -565,7 +565,7 @@
 },
 
 "wednesdayB":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",
@@ -645,9 +645,9 @@
 },
 
 "thursdayB":{
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
-		"room": "",
+		"room": "Roll Call",
 		"teacher": "",
 		"startTime": "08:45",
 		"periodLength": "7"
@@ -723,7 +723,7 @@
 },
 
 "fridayB":{ 
-	"Roll Call":{
+	"Period RC":{
 		"subject": "",
 		"room": "Roll Call",
 		"teacher": "",

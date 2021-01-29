@@ -22,7 +22,7 @@ function daysFrom(date1, date2) {
 	return Math.round((ndate2 - ndate1) / (1000 * 60 * 60 * 24));
 }
 function week() {
-	return (Math.floor((daysFrom(jan1, today) - 3) / 7) % 2) ? 'A' : 'B';
+	return (Math.floor((daysFrom(jan1, today) - 3) / 7) % 2) ? 'B' : 'A';
 	// this is fragile
 	// but the week a b system is fucked anyway ...
 	// I'll tell u whats fucked? How fragile this code is... You have to change the - 3 thingy every year coz the year off sets all the time
@@ -62,7 +62,7 @@ function gen_table(json) {
 		tstr += "<tr><td id=\"time1\">";
 		if(v.room == "Sport"){
 			tstr += `<div class="timeSubtext">${k1}: Sport</div>`
-		}else if(localStorage.getItem("breakCheck") === "1" &&  (v.room === "Recess"|| v.room === "Lunch"||v.room === "End of Day"||v.room === "Assembly"))  tstr += `<div class="timeSubtext">${v.room}- ${v.startTime}<div>`;
+		}else if(localStorage.getItem("breakCheck") === "1" &&  (v.name === "Roll Call" || v.room === "Recess"|| v.room === "Lunch"||v.room === "End of Day"||v.room === "Assembly"))  tstr += `<div class="timeSubtext">${v.room}- ${v.startTime}<div>`;
 		else if(v.room === "Recess"||v.room === "Lunch"||v.room === "End of Day"||v.room === "Assembly");
 		else if(localStorage.getItem("timeCheck") === "1" && addDetails && v.room != ""){
 			if(localStorage.getItem("classCheck") === "1") tstr += `<div class="timeSubtext">${k1}: ${v.class1} with ${v.teacher} at ${v.room} - ${v.startTime}<div>`;
@@ -112,6 +112,7 @@ function update(json) {
 	else if(json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].room === "Recess") periodInfo.innerHTML = "Recess";
 	else if(json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].room === "End of Day") periodInfo.innerHTML = "End of Day";
 	else if(json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].room === "Assembly") periodInfo.innerHTML = "Assembly";
+	else if(json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].name === "Roll Call") periodInfo.innerHTML = "Roll Call";
 	else if(localStorage.getItem("classCheck") === "1") periodInfo.innerHTML = `${json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].class1} with ${json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].teacher}<br>in Room ${json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].room}`
 	else periodInfo.innerHTML = `${json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].subject} with ${json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].teacher}<br>in Room ${json.timetableData[dateNamesTo[day()].toLowerCase() + week()][times[next].periodName].room}`
 }
