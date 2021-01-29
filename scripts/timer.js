@@ -62,7 +62,8 @@ function gen_table(json) {
 		tstr += "<tr><td id=\"time1\">";
 		if(v.room == "Sport"){
 			tstr += `<div class="timeSubtext">${k1}: Sport</div>`
-		}else if(localStorage.getItem("breakCheck") === "1" &&  (v.name === "Roll Call" || v.room === "Recess"|| v.room === "Lunch"||v.room === "End of Day"||v.room === "Assembly"))  tstr += `<div class="timeSubtext">${v.room}- ${v.startTime}<div>`;
+		}else if(localStorage.getItem("breakCheck") === "1" &&  (v.room === "Recess"|| v.room === "Lunch"||v.room === "End of Day"||v.room === "Assembly"))  tstr += `<div class="timeSubtext">${v.room}- ${v.startTime}<div>`;
+		else if(localStorage.getItem("breakCheck") === "1" &&  v.name === "Roll Call")  tstr += `<div class="timeSubtext">${v.name}- ${v.startTime}<div>`;
 		else if(v.room === "Recess"||v.room === "Lunch"||v.room === "End of Day"||v.room === "Assembly");
 		else if(localStorage.getItem("timeCheck") === "1" && addDetails && v.room != ""){
 			if(localStorage.getItem("classCheck") === "1") tstr += `<div class="timeSubtext">${k1}: ${v.class1} with ${v.teacher} at ${v.room} - ${v.startTime}<div>`;
